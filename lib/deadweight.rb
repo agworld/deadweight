@@ -129,8 +129,12 @@ class Deadweight
     @unused_selectors
   end
 
-  def dump(output)
-    output.puts(@unused_selectors)
+  def dump(output=nil)
+    if output
+      output.puts(@unused_selectors)
+    else
+      puts(@unused_selectors)
+    end
   end
 
   def process!(html)
